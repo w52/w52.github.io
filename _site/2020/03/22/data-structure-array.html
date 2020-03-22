@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="zh">
   <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>leetcode 1 - 两数之和 - Blog Show</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>数据结构(1) —— 数组 - Blog Show</title>
 
-<meta name="description" content="leetcode 1 - 求解两数之和原题https://leetcode-cn.com/problems/two-sum/给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中...">
-<link rel="canonical" href="http://localhost:4000/2020/03/15/leetcode-001.html"><link rel="alternate" type="application/rss+xml" title="Blog Show" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
+<meta name="description" content="本文对数据结构中最简单的线性结构 —— 数组进行数据">
+<link rel="canonical" href="http://localhost:4000/2020/03/22/data-structure-array.html"><link rel="alternate" type="application/rss+xml" title="Blog Show" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
 <meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
@@ -279,84 +279,94 @@
               <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
 <!-- end custom main top snippet -->
-<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>leetcode 1 - 两数之和</h1></header><span class="split-space">&nbsp;</span>
+<article itemscope itemtype="http://schema.org/Article"><div class="article__header"><header><h1>数据结构(1) —— 数组</h1></header><span class="split-space">&nbsp;</span>
           <a class="edit-on-github"
             title="在 Github 上修改"
-            href="https://github.com/user_name/repo_name/tree/master/_posts/2020-03-15-leetcode-001.md">
-            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="leetcode 1 - 两数之和"><div class="article__info clearfix"><ul class="left-col menu"><li>
+            href="https://github.com/user_name/repo_name/tree/master/_posts/2020-03-22-data-structure-array.md">
+            <i class="far fa-edit"></i></a></div><meta itemprop="headline" content="数据结构(1) —— 数组"><div class="article__info clearfix"><ul class="left-col menu"><li>
               <a class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag=leetcode">leetcode</a>
-            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2020年 03月15日</span>
-            </li></ul></div><meta itemprop="author" content="小二"/><meta itemprop="datePublished" content="2020-03-15T00:00:00+08:00">
-    <meta itemprop="keywords" content="leetcode"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
+                href="/archive.html?tag=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a>
+            </li></ul><ul class="right-col menu"><li><i class="far fa-calendar-alt"></i> <span>2020年 03月22日</span>
+            </li></ul></div><meta itemprop="author" content="小二"/><meta itemprop="datePublished" content="2020-03-22T00:00:00+08:00">
+    <meta itemprop="keywords" content="数据结构"><div class="js-article-content"><div class="layout--article"><!-- start custom article top snippet -->
 
 <!-- end custom article top snippet -->
-<div class="article__content" itemprop="articleBody"><p>leetcode 1 - 求解两数之和</p>
-
-<p><strong>原题</strong></p>
-
-<p><a href="https://leetcode-cn.com/problems/two-sum/">https://leetcode-cn.com/problems/two-sum/</a></p>
-
-<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
-
-<p><strong>例如</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>给定 nums = [2, 7, 11, 15], target = 9
-
-因为 nums[0] + nums[1] = 2 + 7 = 9
-所以返回 [0, 1]
-
-</code></pre></div></div>
+<div class="article__content" itemprop="articleBody"><p>本文对数据结构中最简单的线性结构 —— 数组进行数据</p>
 
 <!--more-->
 
-<h2 id="暴力求解">暴力求解</h2>
+<h2 id="数组定义">数组定义</h2>
 
-<h3 id="原理分析">原理分析</h3>
+<p><strong>数组</strong> 是在一片连续的存储内存空间中存放的数据集合，其中每一个数据类型是相同的。</p>
 
-<p>该问题比较简单， 求两数之和等于目标值即可，那么暴力求解法就是通过二重for循环，即可找到答案，代码试下如下</p>
+<p>因此，数组中存储的是多个相同数据类型的数据项。</p>
 
-<h3 id="代码实现">代码实现</h3>
+<p>数组的结构如下示意图所示</p>
 
-<p>使用C语言实现，如下</p>
+<p><img src="/assets/images/ds-array.png" alt="ds-array.png" /></p>
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/**
- * Note: The returned array must be malloced, assume caller calls free().
- */</span>
-<span class="kt">int</span><span class="o">*</span> <span class="nf">twoSum</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">numsSize</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">returnSize</span><span class="p">){</span>
-    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-    
-    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numsSize</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span><span class="n">numsSize</span><span class="p">,</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="o">*</span><span class="n">returnSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-                    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-                <span class="p">}</span>
-                
-                <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-                <span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
-                <span class="o">*</span><span class="n">returnSize</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-                <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        
-    <span class="p">}</span>
-    
-    <span class="o">*</span><span class="n">returnSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<p>数组的特点：</p>
 
-<h2 id="优化方法">优化方法</h2>
+<ul>
+  <li>
+    <p>存储的数据类型相同</p>
+  </li>
+  <li>
+    <p>存储的内存空间连续</p>
+  </li>
+  <li>
+    <p>通过数组索引进行访问</p>
+  </li>
+</ul>
 
-<h3 id="原理分析-1">原理分析</h3>
+<h2 id="数组实现">数组实现</h2>
 
-<h3 id="代码实现-1">代码实现</h3>
-</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-03-15T00:00:00+08:00"><!-- start custom article footer snippet -->
+<p>此处使用C语言实现数组的定义以及访问</p>
+
+<p>在C语言中，数组的定义和访问如下图所示</p>
+
+<p><img src="/assets/images/array-in-c-language.png" alt="array-in-c-language.png" /></p>
+
+<p>代码实现如下</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt; 
+</span>  
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+<span class="p">{</span> 
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span> 
+    <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> 
+    <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> 
+    <span class="n">arr</span><span class="p">[</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// this is same as arr[2] = 2 </span>
+    <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> 
+  
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%d %d %d %d"</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span> 
+  
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> 
+<span class="p">}</span> </code></pre></figure>
+
+<p>输出结果为</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6 8 10 6
+</code></pre></div></div>
+
+<h2 id="参考">参考</h2>
+
+<ol>
+  <li>
+    <p><a href="https://www.geeksforgeeks.org/array-data-structure/">Array Data Structure</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.geeksforgeeks.org/introduction-to-arrays/">Introduction to Arrays</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.geeksforgeeks.org/arrays-in-c-cpp/">Arrays in C/C++</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.geeksforgeeks.org/difference-pointer-array-c/">Difference between pointer and array in C</a></p>
+  </li>
+</ol>
+
+</div><section class="article__sharing d-print-none"></section><div class="d-print-none"><footer class="article__footer"><meta itemprop="dateModified" content="2020-03-22T00:00:00+08:00"><!-- start custom article footer snippet -->
 
 <!-- end custom article footer snippet -->
 <div class="article__subscribe"><div class="subscribe"><i class="fas fa-rss"></i> <a type="application/rss+xml" href="/feed.xml">订阅</a></div>
@@ -367,7 +377,7 @@
       </a>
     </p>
   </div></div></footer>
-<div class="article__section-navigator clearfix"><div class="next"><span>下篇</span><a href="/2020/03/22/data-structure-array.html">数据结构(1) —— 数组</a></div></div></div>
+<div class="article__section-navigator clearfix"><div class="previous"><span>上篇</span><a href="/2020/03/15/leetcode-001.html">leetcode 1 - 两数之和</a></div></div></div>
 
 </div>
 

@@ -1,0 +1,36 @@
+I"�<p>本文对数据结构中最简单的线性结构 —— 数组进行数据</p>
+
+<!--more-->
+
+<h2 id="数组定义">数组定义</h2>
+
+<p><strong>数组</strong> 是在一片连续的存储内存空间中存放的数据集合，其中每一个数据类型是相同的。</p>
+
+<p>因此，数组中存储的是多个相同数据类型的数据项。</p>
+
+<p>数组的结构如下示意图所示</p>
+
+<p><img src="/assets/images/ds-array.png" alt="ds-array.png" /></p>
+
+<p>数组的特点：</p>
+
+<ul>
+  <li>
+    <p>存储的数据类型相同</p>
+  </li>
+  <li>
+    <p>存储的内存空间连续</p>
+  </li>
+  <li>
+    <p>通过数组索引进行访问</p>
+  </li>
+</ul>
+
+<h2 id="数组实现">数组实现</h2>
+
+<p>此处使用C语言实现数组的定义以及访问</p>
+
+<p>在C语言中，数组的定义和访问如下图所示</p>
+
+<p><img src="/assets/images/array-in-c-language.png" alt="array-in-c-language.png" /></p>
+:ET
