@@ -1,0 +1,22 @@
+I"\<p>介绍冒泡排序算法的原理，以及代码实现</p>
+
+<!--more-->
+
+<h2 id="原理">原理</h2>
+
+<p>以[9, 1, 5, 8, 3, 7, 4, 6, 2]数据为例，介绍冒泡排序算法原理</p>
+
+<p>当进行第一轮冒泡排序时， 流程如下图</p>
+
+<p><img src="/assets/images/bubble_sort_1st.png" alt="bubble_sort_1st.png" /></p>
+
+<p>当进行第二轮冒泡排序时， 流程如下图
+<img src="/assets/images/bubble_sort_2nd.png" alt="bubble_sort_2nd.png" /></p>
+
+<p>以此类推，直到对所有数据完成排序。</p>
+
+<h2 id="实现">实现</h2>
+
+<p>以下通过C语言实现冒泡排序</p>
+
+:ET
